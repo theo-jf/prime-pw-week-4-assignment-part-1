@@ -126,3 +126,39 @@ console.log("Test - should return an empty array, then an array with containing 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
 
+// This is my solution to a problem I found on Edabit.
+// The problem asks to "Convert a Number to Base-2," or in other words, to convert a decimal in our base-10 number system to its binary representation.
+// The numbers it tests will be between 1025 and 0 (including 0).
+// I'm sure there's an existing function to convert a number to binary in Javascript, but I decided to do a math-centric method in my solution below.
+
+function binary(decimal) {
+	let num = decimal;
+	if (num == 0) {
+		return "0";
+	}
+	const arr = [];
+	while (num >= 1) {
+		let remainder = num % 2;
+		num = Math.floor(num / 2);
+		if (remainder == 0) {
+			arr.unshift(0);
+		}
+		else if (remainder != 0) {
+			arr.unshift(1);
+		}
+	}
+	return arr.join("");
+}
+
+// The function first assigns the decimal value to a variable "num" to allow alteration.
+// Next, the function checks if "0" has been entered, in which case 0 is simply returned.
+// Next, an array is created which will store the converted binary values. 
+// Following the array, a while loop is created which will continue so long as the value of num is greater than or equal to 1.
+// Within the loop, the variable "remainder" is set to the remainder of num divided 2, 
+// after which the value of num is changed to the quotient of num / 2 with the remainder removed using Math.floor.
+// If remainder is equal to 0, 0 is shifted to arr.
+// If remainder is not equal to 0, 1 is shifted to arr.
+// This process repeats until the value of num is less than 1, upon which arr is returned as a string with all it's values joined together. 
+
+console.log("Test - should return '101' as conversion for 5, '101110001' as conversion for 369, and '110100' for 52 in that order", binary(5), binary(369), binary(52));
+
