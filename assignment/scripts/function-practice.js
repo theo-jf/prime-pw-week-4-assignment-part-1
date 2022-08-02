@@ -18,7 +18,7 @@ function helloName( name ) {
   return "Hello, " + `${name}` + "!";
 }
 // Remember to call the function to test
-console.log("Test - should say 'Hello name!', where 'name' is the variable entered into the function", helloName(Theo));
+console.log("Test - should say 'Hello, name!', where 'name' is the string entered into the function", helloName("Theo"));
 
 
 // 3. Function to add two numbers together & return the result
@@ -119,7 +119,7 @@ function deleteNegatives(array) {
   }
   return newArray;
 }
-console.log("Test - should return an empty array, then an array with containing '22, 300'", deleteNegatives(negativeArray), deleteNegatives(mixedArray));
+console.log("Test - should return an empty array, then an array with containing '22, 300' in that order", deleteNegatives(negativeArray), deleteNegatives(mixedArray));
 
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
