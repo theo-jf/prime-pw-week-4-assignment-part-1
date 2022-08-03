@@ -15,7 +15,7 @@ console.log('Test - should say "Hello World!"', hello());
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 function helloName( name ) {
-  return "Hello, " + `${name}` + "!";
+  return `Hello, ${name}!`;
 }
 // Remember to call the function to test
 console.log("Test - should say 'Hello, name!', where 'name' is the string entered into the function", helloName("Theo"));
@@ -67,7 +67,7 @@ console.log("Test - should return 'undefined' and 'snake' in that order", getLas
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find( value, array ){
   for (let i = 0; i < array.length; i++) {
-    if (array[i] == value) {
+    if (array[i] === value) {
       return true;
     }
   }
@@ -133,14 +133,14 @@ console.log("Test - should return an empty array, then an array with containing 
 
 function binary(decimal) {
 	let num = decimal;
-	if (num == 0) {
+	if (num === 0) {
 		return "0";
 	}
 	const arr = [];
 	while (num >= 1) {
 		let remainder = num % 2;
 		num = Math.floor(num / 2);
-		if (remainder == 0) {
+		if (remainder === 0) {
 			arr.unshift(0);
 		}
 		else if (remainder != 0) {
@@ -156,8 +156,8 @@ function binary(decimal) {
 // Following the array, a while loop is created which will continue so long as the value of num is greater than or equal to 1.
 // Within the loop, the variable "remainder" is set to the remainder of num divided 2, 
 // after which the value of num is changed to the quotient of num / 2 with the remainder removed using Math.floor.
-// If remainder is equal to 0, 0 is shifted to arr.
-// If remainder is not equal to 0, 1 is shifted to arr.
+// If remainder is equal to 0, 0 is un-shifted to arr.
+// If remainder is not equal to 0, 1 is un-shifted to arr.
 // This process repeats until the value of num is less than 1, upon which arr is returned as a string with all it's values joined together. 
 
 console.log("Test - should return '101' as conversion for 5, '101110001' as conversion for 369, and '110100' for 52 in that order", binary(5), binary(369), binary(52));
